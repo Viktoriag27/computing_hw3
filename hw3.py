@@ -115,6 +115,7 @@ Logical errors: When the code is syntactically correct and it successfully runs,
 but produces a wrong result.
 '''
 
+
 ### (a)
 total_double_sum = 0
 for elem in [10, 5, 2]:
@@ -127,6 +128,13 @@ The variable total_double_sum only sums each element in the list,
 but it doesn't sum the double value of each element.
 Also, double only stores the double value of each element and always saves the last value.
 '''
+#a. Solution:
+total_double_sum = 0
+for elem in [10, 5, 2]:
+    double = elem * 2
+    total_double_sum += double
+print(double, total_double_sum)
+
 
 ### (b)
 strings = ''
@@ -137,6 +145,13 @@ print(strings)
 The variable strings only shows or save the last element in the list separated by '_'.
 It doesn't join all elements with '_' as expected. Therefore, it is a logical error.
 '''
+#b. Solution:
+strings = ''
+for string in ['I', 'am', 'Groot']:
+  strings += (string + "_")
+strings = strings[:-1]
+print(strings)
+
 
 ### (c) Careful!
 # j=10
@@ -146,17 +161,24 @@ It doesn't join all elements with '_' as expected. Therefore, it is a logical er
 The logical error in this code occurs because the variable j starts greater than zero. 
 Since j is incremented in each iteration, its value keeps increasing, and the loop will never stop
 '''
+#c. Solution:
+j=10
+while j<100:
+    j += 1
+
 
 ### (d)
 productory = 0
 for elem in [1, 5, 25]:
     productory *= elem
 print(productory)
-
 '''
 The problem with this loop is that the variable productory starts with a value of zero. 
 As a result, every multiplication with the elements in the list will return zero. 
 To correctly calculate the product of the elements in the list, we need to initialize productory with a value of one.
 '''
-
-
+#d. Solution:
+productory =  1
+for elem in [1, 5, 25]:
+    productory *= elem
+print(productory)

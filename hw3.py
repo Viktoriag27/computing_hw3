@@ -128,6 +128,12 @@ but it doesn't sum the double value of each element.
 Also, double only stores the double value of each element and always saves the last value.
 '''
 
+total_double_sum = 0
+for elem in [10, 5, 2]:
+    double = elem * 2
+    total_double_sum += double
+print(double, total_double_sum)
+
 ### (b)
 strings = ''
 for string in ['I', 'am', 'Groot']:

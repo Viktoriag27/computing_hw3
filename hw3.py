@@ -11,6 +11,34 @@
 # "Undefined instruction for color: <light>" 
 # where <light> is the value of the parameter light.
 #
+def car_at_light(light):
+    if light == "red":
+        return "stop"
+    elif light == "green":
+        return "go"
+    elif light == "yellow":
+        return "wait"
+    else:
+        return f"Undefined instruction for color: {light}"
+    
+#Example usage:1
+ #Light is red
+light = "red" 
+result = car_at_light(light)
+print(result)                  # Output: stop
+
+#Example usage:2
+ #Light is red
+light = "green"
+result = car_at_light(light)
+print(result)                  # Output: go
+
+#Example usage:3
+ #Undefined color
+light = "purple"
+result = car_at_light(light)
+print(result)                  # Output: Undefined instruction for color: purple
+
 
 # 2)
 # Create a function named "safe_subtract" that
@@ -20,6 +48,41 @@
 # it returns None.
 # If there is any other reason why it fails show the problem 
 # 
+
+def safe_subtract(a, b):
+    # Check if both inputs are numbers
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return a - b
+    else:
+        # If inputs are not numeric, return None
+        return None
+
+    # Handle unexpected cases (this code will only run if something unexpected happens)
+    try:
+        return a - b
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+#Example usage:1
+ #Valid Subtraction
+result = safe_subtract(10, 3)
+print(result)                                     # Output: 7
+
+#Example usage:1
+ #Invalid Types
+result = safe_subtract(10, "apple")
+print(result)                                     # Output: None
+
+#Example usage:1
+ #Floating Point Subtraction
+result = safe_subtract(15.5, 4.3)
+print(result)                                     # Output: 11.2
+
+#Example usage:1
+ #Handling Unexpected Issues: Suppose there's some issue with an unsupported operation
+result = safe_subtract(10, None)
+print(result)                                     # Output: None
 
 # 3)
 # Imagine you have a dictionary with the attributes of a person

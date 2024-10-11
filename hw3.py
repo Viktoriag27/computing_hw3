@@ -28,7 +28,7 @@ result = car_at_light(light)
 print(result)                  # Output: stop
 
 #Example usage:2
- #Light is red
+ #Light is green
 light = "green"
 result = car_at_light(light)
 print(result)                  # Output: go
